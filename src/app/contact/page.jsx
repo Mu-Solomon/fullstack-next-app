@@ -5,11 +5,7 @@ const ContactPage = () => {
   return (
     <div className="contanier flex flex-col md:flex-row gap-0 md:gap-10 items-center justify-center">
       <div className="imageContainer relative w-80 md:w-2/4 xl:w-1/2 h-[500px]">
-        <Image
-          src="/contact.png"
-         fill
-          className="object-contain"
-        />
+        <Image src="/contact.png" fill className="object-contain" />
       </div>
       <div className="formContainer flex-1">
         <form action="" className="flex flex-col gap-5">
