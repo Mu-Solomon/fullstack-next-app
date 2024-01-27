@@ -1,6 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "About",
+  description: "Next.js About app",
+};
+
+
 const AboutPage = () => {
   return (
     <div className="container items-center flex flex-col md:flex-row md:gap-10 gap-0 md:my-28 text-center md:text-left">

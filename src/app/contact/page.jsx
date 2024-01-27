@@ -1,6 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Contact section",
+  description: "Next.js Contact section of the   app",
+};
+
+
 const ContactPage = () => {
   return (
     <div className="contanier flex flex-col md:flex-row gap-0 md:gap-10 items-center justify-center">

@@ -12,7 +12,7 @@ const colors = {
 };
 
 export const metadata = {
-  title: "Next App",
+  title: { default: "Next 14 App", template: "%s | Next.js 14" },
   description: "Next.js starter app",
 };
 

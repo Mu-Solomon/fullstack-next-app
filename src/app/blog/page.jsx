@@ -1,8 +1,15 @@
 import PostCard from "@/components/postCard/postCard";
+import { getPosts } from "@/lib/data";
 import { error } from "console";
 import React from "react";
 
-const getData = async () => {
+export const metadata = {
+  title: "Blogs section",
+  description: "Next.js Blogs section of the   app",
+};
+
+//FETCH DATA WITH AN API
+/* const getData = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
 
   if (!res.ok) {
@@ -11,9 +18,10 @@ const getData = async () => {
 
   return res.json();
 };
-
+ */
 const BlogPage = async () => {
-  const posts = await getData();
+  /*   const posts = await getData(); */
+  const posts = await getPosts();
   return (
     <div className="flex items-center  flex-wrap gap-10 w-[110%]">
       {posts.map((post) => (
