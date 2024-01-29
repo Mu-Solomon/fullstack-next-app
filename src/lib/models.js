@@ -18,7 +18,6 @@ const postSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
-    password: { type: String, required: true, min: 6 },
     img: { type: String },
     userId: {
       type: String,
