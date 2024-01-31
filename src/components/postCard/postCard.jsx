@@ -10,11 +10,11 @@ const PostCard = ({ post }) => {
           <Image src={post.img} fill className="object-cover" />
         </div>
         <span className="text-sm transform rotate-[270deg] my-auto">
-          {post.createdAt.toLocaleDateString("en-GB", {
+         {/*  {post.createdAt.toLocaleDateString("en-GB", {
             day: "2-digit",
             month: "2-digit",
             year: "numeric",
-          })}
+          })} */}
         </span>
       </div>
       <div className="bottom">

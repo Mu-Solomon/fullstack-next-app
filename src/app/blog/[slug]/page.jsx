@@ -13,25 +13,25 @@ export const generateMetadata = async ({ params }) => {
 };
 
 //FETCH DATA WITH AN API
-/* const getData = async (slug) => {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${slug}`,
-    { cache: "no-store" }
-  );
+const getData = async (slug) => {
+  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+
 
   if (!res.ok) {
     throw new Error("Something isn't right!");
   }
 
   return res.json();
-}; */
+};
 
 const BlogPage = async ({ params }) => {
   const { slug } = params;
-  /*
-  const post = await getData(slug); */
-  const post = await getPost(slug);
+
+  /* FETCH WITH API */
+  const post = await getData(slug);
   console.log(post);
+  /* FETCH WITHOUT API */
+  /* const post = await getPost(slug); */
   return (
     <div className=" flex gap-20">
       <div className="hidden md:block  imgContainer flex-1 relative w-[500px] h-screen ">

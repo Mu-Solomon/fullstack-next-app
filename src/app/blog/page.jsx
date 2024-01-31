@@ -9,8 +9,8 @@ export const metadata = {
 };
 
 //FETCH DATA WITH AN API
-/* const getData = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/blog");
 
   if (!res.ok) {
     throw new Error("Something isn't right!");
@@ -18,10 +18,12 @@ export const metadata = {
 
   return res.json();
 };
- */
+
 const BlogPage = async () => {
-  /*   const posts = await getData(); */
-  const posts = await getPosts();
+  const posts = await getData();
+  console.log()
+
+  /*  const posts = await getPosts(); */
   return (
     <div className="flex items-center  flex-wrap gap-10 w-[110%]">
       {posts.map((post) => (
