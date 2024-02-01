@@ -4,6 +4,7 @@ import { handleLogin } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useFormState } from "react-dom";
+import Link from "next/link";
 
 const LoginForm = () => {
   const [state, formAction] = useFormState(handleLogin, undefined);
@@ -31,6 +32,7 @@ const LoginForm = () => {
       <button className="p-5 bg-[#3673fd] text-[#e5e5e5] font-bold rounded-md">
         Login
       </button>
+      <Link href="/register">No Accout? Register.</Link>
       {state?.error && <p className="text-red-500 text-sm">{state?.error}</p>}
     </form>
   );

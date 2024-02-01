@@ -79,3 +79,14 @@ export const getUser = async (id) => {
     throw new Error("Failed to fetch user");
   }
 };
+
+export const getUsers = async () => {
+  try {
+    connectToDb();
+    const users = await User.find();
+    return users;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch the users");
+  }
+};

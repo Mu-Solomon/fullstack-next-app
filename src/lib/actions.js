@@ -6,8 +6,10 @@ import { connectToDb } from "./utils";
 import { revalidatePath } from "next/cache";
 import bcrypt from "bcrypt";
 
-export const addPost = async (formData) => {
-  const { title, description, slug, userId } = Object.fromEntries(formData);
+//HANDLING POSTS
+export const addPost = async (prevState, formData) => {
+  const { title, description, slug, userId, img } =
+    Object.fromEntries(formData);
 
   try {
     connectToDb();
@@ -16,13 +18,15 @@ export const addPost = async (formData) => {
       description,
       slug,
       userId,
-      password: "Any",
+      img,
     });
     await newPost.save();
     revalidatePath("/blog");
+    revalidatePath("/admin");
     console.log("Saved to DB");
   } catch (error) {
     console.log("Failed to save to DB", error);
+    return { error: "Something went wrong!" };
   }
 };
 
@@ -34,11 +38,48 @@ export const deletePost = async (formData) => {
 
     await Post.findByIdAndDelete(id);
     console.log("Deleted from DB");
+    revalidatePath("/admin");
     revalidatePath("/blog");
   } catch (error) {
     console.log("Failed to delete from DB", error);
   }
 };
+
+//HANDLING USERS
+
+export const addUser = async (prevState, formData) => {
+  const { username, password, email, img } = Object.fromEntries(formData);
+
+  try {
+    connectToDb();
+    const newUser = new User({
+      username,
+      password,
+      email,
+      img,
+    });
+    await newUser.save();
+    revalidatePath("/admin");
+    console.log("Saved to DB");
+  } catch (error) {
+    console.log("Failed to save to DB", error);
+  }
+};
+
+export const deleteUser = async (formData) => {
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    connectToDb();
+    await Post.deleteMany({ userId: id });
+    await User.findByIdAndDelete(id);
+    console.log("Deleted from DB");
+    revalidatePath("/admin");
+  } catch (error) {
+    console.log("Failed to delete from DB", error);
+  }
+};
+
 //LOGINS
 export const handleGithubLogin = async () => {
   await signIn("github");
