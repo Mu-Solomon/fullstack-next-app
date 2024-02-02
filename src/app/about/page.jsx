@@ -6,7 +6,6 @@ export const metadata = {
   description: "Next.js About app",
 };
 
-
 const AboutPage = () => {
   return (
     <div className="container items-center flex flex-col md:flex-row md:gap-10 gap-0 md:my-28 text-center md:text-left">
@@ -17,9 +16,9 @@ const AboutPage = () => {
         </h1>
         <p className="">
           We create digital ideas that are bigger, bolder, braver and better. We
-          believe in good ideas flexibility and precission we're worl's Our
-          Special Team best consulting & finance solution provider. Wide range
-          of web and software development services.
+          believe in good ideas flexibility and precission we&apos;re
+          worl&apos;s Our Special Team best consulting &amp; finance solution
+          provider. Wide range of web and software development services.
         </p>
         <div className="boxes flex justify-center flex-col text-center md:text-left md:flex-row md:justify-between items-center">
           <div className="box flex flex-col gap-2">
