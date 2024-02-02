@@ -23,7 +23,7 @@ const Links = ({ session }) => {
     <>
       <div className="items-center gap-2 hidden md:flex">
         {links.map((link) => (
-          <NavLink item={link} />
+          <NavLink item={link} key={link.path} />
         ))}
         {session?.user ? (
           <>
