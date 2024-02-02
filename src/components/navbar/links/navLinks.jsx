@@ -3,12 +3,11 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NavLink = ({ item, close, key }) => {
+const NavLink = ({ item, close }) => {
   const pathName = usePathname();
 
   return (
     <Link
-      key={key}
       onClick={close}
       href={item.path}
       className={`w-100 px-6 py-2 font-bold text-center rounded-full ${
