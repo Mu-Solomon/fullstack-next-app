@@ -29,7 +29,7 @@ const BlogPage = async ({ params }) => {
 
   /* FETCH WITH API */
   const post = await getData(slug);
-  console.log(post);
+ /*  console.log(post); */
   /* FETCH WITHOUT API */
   /* const post = await getPost(slug); */
   return (

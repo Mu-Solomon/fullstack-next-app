@@ -21,7 +21,6 @@ const getData = async () => {
 
 const BlogPage = async () => {
   const posts = await getData();
-  console.log()
 
   /*  const posts = await getPosts(); */
   return (

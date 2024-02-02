@@ -15,6 +15,10 @@ const Links = ({ session }) => {
 
   const [open, setOpen] = useState(false);
 
+  const close = () => {
+    setOpen((prev) => !prev);
+  };
+
   return (
     <>
       <div className="items-center gap-2 hidden md:flex">
@@ -48,8 +52,25 @@ const Links = ({ session }) => {
       {open && (
         <div className="flex flex-col absolute bg-[#0d0c22]  z-50 w-4/5 right-0 h-4/5 items-center justify-center gap-2 md:hidden">
           {links.map((link) => (
-            <NavLink item={link} key={link.title} />
+            <NavLink close={close} item={link} key={link.title} />
           ))}
+          {session?.user ? (
+            <>
+              {session.user?.isAdmin && (
+                <NavLink
+                  close={close}
+                  item={{ title: "Admin", path: "/admin" }}
+                />
+              )}
+              <form action={handleLogout}>
+                <button className="bg-white text-[#0d0c22] rounded-sm p-2 cursor-pointer font-bold">
+                  Logout
+                </button>
+              </form>
+            </>
+          ) : (
+            <NavLink close={close} item={{ title: "Login", path: "/login" }} />
+          )}
         </div>
       )}
     </>

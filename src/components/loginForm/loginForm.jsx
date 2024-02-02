@@ -29,7 +29,7 @@ const LoginForm = () => {
         className="p-5 bg-[#0d0c22] color-[#e5e5e5] rounded-sm"
       />
 
-      <button className="p-5 bg-[#3673fd] text-[#e5e5e5] font-bold rounded-md">
+      <button className="p-3 md:p-5 bg-[#3673fd] text-[#e5e5e5] font-bold rounded-md">
         Login
       </button>
       <Link href="/register">No Accout? Register.</Link>

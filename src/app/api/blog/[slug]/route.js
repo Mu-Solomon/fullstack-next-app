@@ -7,7 +7,7 @@ export const GET = async (request, { params }) => {
   try {
     connectToDb();
     const post = await Post.findOne({ slug });
-    console.log(post);
+   /*  console.log(post); */
 
     return NextResponse.json(post);
   } catch (error) {
