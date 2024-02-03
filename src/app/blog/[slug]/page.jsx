@@ -14,8 +14,9 @@ export const generateMetadata = async ({ params }) => {
 
 //FETCH DATA WITH AN API
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
-
+  const res = await fetch(
+    `https://fullstack-next-app-eta.vercel.app/api/blog/${slug}`
+  );
 
   if (!res.ok) {
     throw new Error("Something isn't right!");
@@ -29,7 +30,7 @@ const BlogPage = async ({ params }) => {
 
   /* FETCH WITH API */
   const post = await getData(slug);
- /*  console.log(post); */
+  /*  console.log(post); */
   /* FETCH WITHOUT API */
   /* const post = await getPost(slug); */
   return (

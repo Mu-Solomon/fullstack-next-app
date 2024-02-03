@@ -10,7 +10,7 @@ export const metadata = {
 
 //FETCH DATA WITH AN API
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/blog");
+  const res = await fetch("https://fullstack-next-app-eta.vercel.app/api/blog");
 
   if (!res.ok) {
     throw new Error("Something isn't right!");
